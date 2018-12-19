@@ -47,11 +47,7 @@ stage1_main:
 
     call panic                                              ; panic because we have nothing to do
 
-strings.name db "crankyboot", 0x0D, 0x0A, 0x00
-strings.stage db "stage 1", 0x0D, 0x0A, 0x00
-strings.disk db "active disk: ", 0x00
-strings.newline db 0x0D, 0x0A, 0x00
-strings.panic db "feef :(", 0x0D, 0x0A, 0x00
+%include "strings.s"
 
 times 0x1fe-($-$$) db 0
 signature dw 0xaa55
